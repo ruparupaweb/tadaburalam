@@ -77,27 +77,27 @@
     <main class="max-w-5xl mx-auto px-6 py-12 -mt-10 relative z-20">
 
         <!-- SPACE UNTUK FLYER / BANNER (DARI GOOGLE DRIVE) -->
-        <!-- Petunjuk: Ganti tag <img> di bawah ini dengan source image dari Google Drive Anda -->
-        <!-- AREA FLYER / BANNER (Natural Height) -->
+        <!-- AREA FLYER / BANNER -->
         <section class="mb-16 fade-in-up delay-100 flex justify-center">
-            <div class="w-full max-w-md bg-white rounded-3xl shadow-xl p-3 border border-slate-100 relative group overflow-hidden">
+            <!-- max-w-md membatasi lebar maksimal. bg-slate-900 memberikan latar belakang gelap jika gambar tidak memenuhi seluruh rasio 2:3 -->
+            <div class="w-full max-w-md bg-white rounded-3xl shadow-xl p-3 border border-slate-100 relative group">
                 
-                <!-- 
-                GANTI TEXT "MASUKKAN_LINK_GOOGLE_DRIVE_ANDA_DISINI" DENGAN LINK GDRIVE ANDA
-                Gambar ini sekarang menggunakan w-full h-auto agar tidak memotong isi gambar 
-                -->
-                <img src="Tadabur Alam.png" alt="Flyer Tadabur Alam">
-                
-                <!-- Teks Placeholder (Garus Putus-putus) -->
-                <div id="banner-placeholder" class="w-full aspect-[2/3] bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center text-center p-6">
-                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-3">
-                        <i class="fa-solid fa-triangle-exclamation text-3xl text-amber-500 hidden" id="error-icon"></i>
-                        <i class="fa-brands fa-google-drive text-3xl text-brand-500" id="default-icon"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-600" id="placeholder-title">Flyer Program</h3>
-                    <p class="text-sm mt-1 max-w-[200px]" id="placeholder-desc">Masukkan link Google Drive dari gambar orientasi portrait Anda di kode HTML.</p>
+                <!-- aspect-[2/3] mengunci rasio tinggi vs lebar menjadi 2:3 (Portrait) -->
+                <!-- bg-slate-100 adalah warna background yang akan terlihat jika gambar (karena object-contain) menyisakan ruang kosong -->
+                <div class="relative w-full aspect-[2/3] bg-slate-100 rounded-2xl overflow-hidden flex items-center justify-center">
+                    
+                    <!-- 
+                    Perubahan Utama: object-contain 
+                    Ini memastikan gambar menyusut/membesar (shrink/grow) proporsional agar 100% muat di dalam kotak aspect-[2/3] TANPA terpotong (crop).
+                    -->
+                    <img 
+                        src="Tadabur Alam.png" 
+                        alt="Flyer Program Tadabur Alam" 
+                        class="absolute inset-0 w-full h-full object-contain"
+                    >
+                    
                 </div>
-
+                
             </div>
         </section>
 
