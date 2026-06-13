@@ -79,10 +79,15 @@
         <!-- SPACE UNTUK FLYER / BANNER (DARI GOOGLE DRIVE) -->
         <!-- Petunjuk: Ganti tag <img> di bawah ini dengan source image dari Google Drive Anda -->
         <section class="mb-16 fade-in-up delay-100 flex justify-center">
-            <div class="w-full max-w-md bg-white rounded-3xl shadow-xl p-3">
-                
-                <!-- aspect-[2/3] mengatur rasio proporsional portrait -->
-                <div class="relative w-full aspect-[2/3] bg-slate-100 rounded-2xl">
+            <div class="w-full max-w-md bg-white rounded-3xl shadow-xl p-3 border border-slate-100 relative group overflow-hidden">
+                <img 
+                    id="banner" 
+                    src="Tadabur Alam.png" 
+                    alt="Flyer Tadabur Alam" 
+                    class="w-full h-auto rounded-2xl shadow-sm border border-slate-100 hidden"
+                    onload="imageLoadedSuccessfully(this)"
+                    onerror="imageFailedToLoad(this)"
+                >
             </div>
         </section>
 
